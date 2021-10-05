@@ -1,12 +1,15 @@
 <template>
     <div>
         <!-- composant done -->
-   <button v-on:click="this.$emit('color')">-Done-</button>
+   <button v-on:click="$emit('changeColor',index)">-Done-</button>
   <!--fin conposant done -->
     </div>
 </template>
 <script>
 export default {
-    name: "liste-done"
+    name: "liste-done",
+    props: {
+        index: Number
+    }
 }
 </script>

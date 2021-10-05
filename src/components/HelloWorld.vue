@@ -3,27 +3,27 @@
     <h3>To-Do Liste</h3>
     <!-- composant liste -->
     <ul>
-      <li v-for="(item) in items" :key="item.task">
+      <li v-for="(item, index) in items" :key="item.task">
         <!-- composant element -->
-        <liste-item :item="item"/>
-        <liste-done v-on:color="changeColor"/>
+        <liste-item :item="item" />
+        <liste-done :index="index" v-on:changeColor="changeColor(index)" />
       </li>
       <!-- fin composant element -->
-      </ul>
-      <input type="text" v-model="newItem" />
-      <button type="submit" v-on:click="addTask">Ajouter</button>
-    
+    </ul>
+    <input type="text" v-model="newItem" />
+    <button type="submit" v-on:click="addTask">Ajouter</button>
+
     <!-- fin composant liste -->
   </div>
 </template>
 
 <script>
-import ListeDone from './ListeDone.vue';
-import ListeItem from './ListeItem.vue';
+import ListeDone from "./ListeDone.vue";
+import ListeItem from "./ListeItem.vue";
 
 export default {
   components: { ListeItem, ListeDone },
-  
+
   name: "HelloWorld",
   data() {
     return {

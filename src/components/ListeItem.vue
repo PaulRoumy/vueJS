@@ -16,8 +16,6 @@ export default {
   props: {
     item: Object,
   },
-  created:{
-    
-  }
+  
 };
 </script>
